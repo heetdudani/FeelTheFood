@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block about_status %}active{% endblock about_status%} 
+{% load static %} {% block main %}
+<!-- about section -->
+
+<section class="about_section layout_padding">
+  {% for i in data %}
+  <div class="container">
+    <div style="margin-bottom: 30px;" class="row">
+      <div class="col-md-6">
+        <div class="img-box">
+          <img src="{{i.Image}}" alt="" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>{{i.title}}</h2>
+          </div>
+          <p>
+            {{i.Details}}
+          </p>
+          <!-- <a href=""> Read More </a> -->
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- end about section -->
+{% endblock main %}
